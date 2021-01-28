@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2021 at 01:18 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- Generation Time: Jan 28, 2021 at 02:29 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -86,6 +87,13 @@ CREATE TABLE `kontak_kami` (
   `kategoripesan` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kontak_kami`
+--
+
+INSERT INTO `kontak_kami` (`id`, `tanggalkirim`, `namapengirim`, `emailpengirim`, `subjekpesan`, `isipesan`, `kategoripesan`) VALUES
+(1, '2021-01-28', 'John Doe', 'john@mail.com', 'Services', 'Kurang Memuaskan!!!', 'Pelayanan');
+
 -- --------------------------------------------------------
 
 --
@@ -130,6 +138,14 @@ CREATE TABLE `registrasi` (
   `kodepos` varchar(10) NOT NULL,
   `nohp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `registrasi`
+--
+
+INSERT INTO `registrasi` (`id`, `nmlengkap`, `email`, `jnskelamin`, `provinsi`, `alamat`, `kodepos`, `nohp`) VALUES
+(1, 'Pirmansyah', 'pirman@gmail.com', 'LK', '007', 'Jl Raya Kalimalang', '44351', '08951415161'),
+(2, 'Fajar Habib', 'habib@gmail.com', 'LK', '009', 'Jl Raya Tambun', '32144', '089161661');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +195,7 @@ ALTER TABLE `buah`
 -- AUTO_INCREMENT for table `kontak_kami`
 --
 ALTER TABLE `kontak_kami`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `provinsi`
@@ -191,7 +207,7 @@ ALTER TABLE `provinsi`
 -- AUTO_INCREMENT for table `registrasi`
 --
 ALTER TABLE `registrasi`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
