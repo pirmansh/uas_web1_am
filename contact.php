@@ -31,9 +31,9 @@ if (isset($_POST['send'])) {
         <p>
             <?php
             if ($_GET['status'] == 'sukses') {
-                echo "<div id='info' class='alert alert-success'>Pesan berhasil terkirim!</div>";
+                echo "<div id='info' class='alert alert-success'>Pesan Anda Berhasil Terkirim, Terima Kasih Telah Menghubungi Kami!</div>";
             } else {
-                echo "<div id='info' class='alert alert-danger'>Pesan gagal terkirim!</div>";
+                echo "<div id='info' class='alert alert-danger'>Pesan Anda Gagal Terkirim!</div>";
             }
             ?>
         </p>

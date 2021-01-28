@@ -34,7 +34,7 @@ if (isset($_POST['send'])) {
             if ($_GET['status'] == 'sukses') {
                 echo "<div id='info' class='alert alert-success'>Registrasi Anda Berhasil di Prosess!!</div>";
             } else {
-                echo "<div id='info' class='alert alert-danger'>Registrasi Anda Berhasil Gagal!!</div>";
+                echo "<div id='info' class='alert alert-danger'>Registrasi Anda Gagal!!</div>";
             }
             ?>
         </p>
