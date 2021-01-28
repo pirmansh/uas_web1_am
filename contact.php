@@ -45,7 +45,7 @@ if (isset($_POST['send'])) {
             <label for="emailpengirim"><span>Email</span><input type="email" class="input-field" name="emailpengirim" id="emailpengirim" /></label>
             <label for="kategoripesan"><span>Kategori</span>
                 <select name="kategoripesan" id="kategoripesan" class="select-field">
-                    <option disabled selected value> -- pilih kategori -- </option>
+                    <option disabled selected value> -- Pilih Kategori -- </option>
                     <?php
                     $sql = "SELECT * FROM kategori_pesan";
                     $query = mysqli_query($db, $sql);
@@ -59,7 +59,7 @@ if (isset($_POST['send'])) {
             <label for="isipesan"><span>Isi Pesan</span><textarea rows="10" type="text" class="input-field" name="isipesan" id="isipesan"></textarea></label>
             <div class="button">
                 <button type="submit" name="send" id="send" class="btn btn-kirimpesan">Kirim Pesan</button>
-                <button onsubmit="clear()" type="submit" name="batal" id="batal" class="btn btn-batal">Batal</button>
+                <button type="reset" name="batal" id="batal" class="btn btn-batal">Batal</button>
             </div>
         </form>
     </div>

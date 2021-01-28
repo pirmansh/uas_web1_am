@@ -141,6 +141,10 @@
             border: 1px solid #74b9ff;
         }
 
+        .radio {
+            margin-top: 10px;
+        }
+
         .button {
             float: right;
             font-weight: bold;
@@ -216,6 +220,7 @@
             <div class="link">
                 <a href="index.php">Produk Kami</a>
                 <a href="contact.php">Hubungi Kami</a>
+                <a href="registrasi.php">Registrasi</a>
             </div>
             <br>
             <hr>

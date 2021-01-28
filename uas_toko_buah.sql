@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 13, 2021 at 07:50 AM
--- Server version: 5.7.24
--- PHP Version: 7.2.19
+-- Host: 127.0.0.1
+-- Generation Time: Jan 28, 2021 at 01:18 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `quiz_pra_uas`
+-- Database: `uas_toko_buah`
 --
 
 -- --------------------------------------------------------
@@ -67,7 +67,7 @@ CREATE TABLE `kategori_pesan` (
 
 INSERT INTO `kategori_pesan` (`id`, `kodekategori`, `namakategori`) VALUES
 (1, 'CAT-0001', 'Produk'),
-(2, 'CAT-002', 'Pelayanan'),
+(2, 'CAT-0002', 'Pelayanan'),
 (3, 'CAT-0003', 'Lain-lain');
 
 -- --------------------------------------------------------
@@ -84,6 +84,51 @@ CREATE TABLE `kontak_kami` (
   `subjekpesan` varchar(255) NOT NULL,
   `isipesan` text NOT NULL,
   `kategoripesan` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `provinsi`
+--
+
+CREATE TABLE `provinsi` (
+  `id` int(5) NOT NULL,
+  `kdprov` varchar(10) NOT NULL,
+  `nmprov` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `provinsi`
+--
+
+INSERT INTO `provinsi` (`id`, `kdprov`, `nmprov`) VALUES
+(1, '001', 'ACEH'),
+(2, '002', 'SUMATERA UTARA'),
+(3, '003', 'SUMATERA SELATAN'),
+(4, '004', 'SUMATERA BARAT'),
+(5, '005', 'BANTEN'),
+(6, '006', 'DKI JAKARTA'),
+(7, '007', 'JAWA BARAT'),
+(8, '008', 'JAWA TENGAH'),
+(9, '009', 'JAWA TIMUR'),
+(10, '010', 'BALI');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registrasi`
+--
+
+CREATE TABLE `registrasi` (
+  `id` int(5) NOT NULL,
+  `nmlengkap` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `jnskelamin` varchar(5) NOT NULL,
+  `provinsi` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `kodepos` varchar(10) NOT NULL,
+  `nohp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -109,6 +154,18 @@ ALTER TABLE `kontak_kami`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `provinsi`
+--
+ALTER TABLE `provinsi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registrasi`
+--
+ALTER TABLE `registrasi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -122,6 +179,18 @@ ALTER TABLE `buah`
 -- AUTO_INCREMENT for table `kontak_kami`
 --
 ALTER TABLE `kontak_kami`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `provinsi`
+--
+ALTER TABLE `provinsi`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `registrasi`
+--
+ALTER TABLE `registrasi`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
